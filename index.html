@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game-card">
+    <div class="game-icon" aria-hidden="true">?</div>
+    <p class="eyebrow">A little game of intuition</p>
+    <h1>Guess the number</h1>
+    <p class="intro">I’m thinking of a number between <strong>1 and 100</strong>. Can you find it?</p>
+
+    <form id="guess-form" class="guess-form">
+      <label for="guess-input">Your guess</label>
+      <div class="input-row">
+        <input
+          id="guess-input"
+          name="guess"
+          type="number"
+          min="1"
+          max="100"
+          step="1"
+          placeholder="e.g. 42"
+          inputmode="numeric"
+          autocomplete="off"
+          required
+        >
+        <button class="guess-button" type="submit">Make a guess</button>
+      </div>
+    </form>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite">Enter a number to get started.</p>
+
+    <div class="stats" aria-label="Game statistics">
+      <div class="stat">
+        <span class="stat-label">Attempts</span>
+        <span id="attempt-count" class="stat-value" aria-live="polite">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Previous guesses</span>
+        <span id="guess-history" class="stat-value history">—</span>
+      </div>
+    </div>
+
+    <button id="restart-button" class="restart-button" type="button">Start a new game</button>
+  </main>
+  <footer>Take a guess. Trust your instincts.</footer>
+</body>
+</html>
